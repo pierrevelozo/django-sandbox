@@ -6,8 +6,6 @@ from django.shortcuts import render
 
 def index(request):
     date = timezone.localdate()
-    isnewyear = (date.day == 1 and date.month == 1)
-
-    context = {"isnewyear": "Yes" if isnewyear == True else "No"}
-
-    return render(request, "newyear.html", context)
+    return render(request, "newyear.html", {
+	"newyear" : (date.day == 1 and date.month == 1)
+    })

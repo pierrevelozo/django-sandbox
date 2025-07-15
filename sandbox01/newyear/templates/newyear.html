@@ -8,17 +8,20 @@
 				margin: 0;
 				min-height: 100vh;
 			}
-			body {
-				
+			body {			
 				display: grid;
 				place-items: center;
 			}
-			div {
+			h1 {
 				font-size: 5rem;
 			}
 		</style>
 	</head>
 	<body>
-		<div>{{ isnewyear }}</div>
+		{% if newyear %}
+			<h1>Yes</h1>
+		{% else %}
+			<h1>No</h1>
+		{% endif %}
 	</body>
 </html>
